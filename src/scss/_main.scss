@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$color-primary: #530653;
+$color-body: rgb(241, 239, 233);
+$color-secondary: #400440ba;
+$color-primary-shade:#f0d7f0e1;
+$color-blue: rgb(79, 79, 188);
+$color-blue-shade: rgb(104, 197, 255);
+$color-white: #ffff;
+$text-black:#000000;
+$text-white: #ffff;
+$text-light:#303030ab;
+$shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 600
+);
+$font-family: "Lato";
+$breakpoints:(
+    "xs":"max-width: 575.98px",
+    "sm":"(min-width:576px)and(max-width:767.98px)",
+    "md":"(min-width:768px)and(max-width:991.98px)",
+    "lg":"(min-width:992px)and(max-width:1199.98px)",
+    "xl":"(min-width:1200px)and(max-width:1399.98px)",
+    "xxl":"min-width:1400px"    
+);

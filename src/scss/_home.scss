@@ -1,0 +1,94 @@
+@import "./main";
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name );
+}
+
+@mixin flexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin breakpoint($user-value){
+    $query: map-get($breakpoints, $user-value );
+    @if $query{
+        @media (#{$query}) {
+            @content;
+        }
+    } @else{
+        @error "Oops! seems like the breakpoint #[$user-value] isn't defined yet";
+    }
+}
+
+body{
+    font-family: $font-family;
+    @include flexCenter();
+    height: 100vh;
+    .container{
+        background-color: $color-primary;
+        padding: 3rem 1.5rem;
+        height: 75vh;
+        width: 25rem;
+        border-radius: 1rem;
+        box-shadow: $shadow;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        #logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: 0.5s;
+            img{
+                width: 25%;
+                // margin: 1rem;
+            }
+            h3{
+                color: $text-white;
+                margin-bottom: 0;
+                margin-top: 1rem;
+            }
+            small{
+                color: $text-white;
+                margin-bottom: 0;
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        #container-body{
+            display: flex;
+            flex-direction: column;
+            // background-color: $color-primary-shade;
+            border: none;
+            color: $text-white;
+            border-radius: 1rem;
+            input{
+                color: $text-white;
+                background: none;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid $color-primary-shade;
+            }
+            small{
+                margin-top: 5px;
+            }
+        }
+        button{
+            background-color: $color-white;
+            border: none;
+            outline: none;
+            box-shadow: $shadow;
+            padding: 0.5rem 0.8rem;
+            border-radius: 1rem;
+            font-weight: weight("bold");
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            color: $color-primary;
+        }
+    }
+}
+
